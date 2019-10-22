@@ -1,0 +1,13 @@
+.chat-item.ng-enter {
+    -webkit-animation: fadeInLeft 1s !important;
+    animation: fadeInLeft 1s !important;
+}
+
+.chat-item.ng-enter-stagger {
+    -webkit-animation-delay:200ms !important;
+    animation-delay:200ms !important;
+  
+    /* override to make sure it's not inherited from other styles */
+    -webkit-animation-duration:0 !important;
+    animation-duration:0 !important;
+  }

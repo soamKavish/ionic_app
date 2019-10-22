@@ -1,0 +1,53 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      LOGIN
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <form (ngSubmit)="loginForm()">
+      <ion-row>
+        <ion-col s1ze="12" class="chat-item">
+          <ion-item>
+            <ion-label position="floating">Email</ion-label>
+            <ion-input clearInput [(ngModel)]="todo.email" [ngModelOptions]="{standalone: true}"></ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12" class="chat-item">
+          <ion-item>
+            <ion-label position="floating">Password</ion-label>
+            <ion-input clearInput [(ngModel)]="todo.password" type="password" [ngModelOptions]="{standalone: true}">
+            </ion-input>
+          </ion-item>
+        </ion-col>
+        <ion-col size="12" offset="7">
+          <p style="color:navy">forgot password?</p>
+        </ion-col>
+      </ion-row>
+      <br>
+      <ion-row>
+        <ion-col size="12">
+          <ion-button expand="full" type="submit" class="chat-item">Login</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+  </ion-grid>
+
+  <!-- 
+  <div id="cssSelector">
+    <div class="line">
+      <div class="square el"></div>
+    </div>
+  </div> -->
+
+</ion-content>
