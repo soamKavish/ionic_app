@@ -4,7 +4,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
     <ion-title>
-      Authentic-Days
+      @kavishsoam
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -15,7 +15,9 @@
     Toggle Infinite Scroll
   </ion-button>
 
-  <ion-list></ion-list>
+  <ion-list>
+    <ion-item *ngFor="let i of items">{{i}}</ion-item>
+  </ion-list>
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
     <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">

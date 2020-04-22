@@ -8,12 +8,17 @@ import { IonInfiniteScroll } from '@ionic/angular';
 })
 export class RegisterPage implements OnInit {
 
-  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
+  @ViewChild(IonInfiniteScroll, {static: true}) infiniteScroll: IonInfiniteScroll;
 
   card: any;
+  items = [];
+  // IonInfiniteScroll: any;
   constructor() { }
 
   ngOnInit() {
+    for (let i = 0; i < 30; i++) {
+      this.items.push( this.items.length );
+    }
   }
 
   //    card = document.querySelector('.card');
@@ -31,17 +36,29 @@ export class RegisterPage implements OnInit {
     card.classList.toggle('is-flipped');
   }
 
-  loadData(event) {
-    console.log(event);
-    setTimeout(() => {
-      console.log('Done');
-      event.target.complete();
+  // loadData(event) {
+  //   setTimeout(() => {
+  //     console.log('Done');
+  //     event.target.complete();
 
-      // App logic to determine if all data is loaded
-      // and disable the infinite scroll
-      // if (data.length == 1000) {
-      //   event.target.disabled = true;
-      // }
+  //     // App logic to determine if all data is loaded
+  //     // and disable the infinite scroll
+  //     if (data.length == 1000) {
+  //       event.target.disabled = true;
+  //     }
+  //   }, 500);
+  // }
+
+  loadData(infiniteScroll) {
+    console.log('Begin async operation');
+
+    setTimeout(() => {
+      for (let i = 0; i < 30; i++) {
+        this.items.push( this.items.length );
+      }
+
+      console.log('Async operation has ended');
+      infiniteScroll.target.complete();
     }, 500);
   }
 
